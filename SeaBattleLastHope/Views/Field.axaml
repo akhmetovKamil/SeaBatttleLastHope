@@ -10,29 +10,29 @@
              x:DataType="viewModels:FieldViewModel">
 
 
-  <UserControl.DataTemplates>
-    <DataTemplate DataType="{x:Type viewModels:FieldViewModel}">
-      <!-- <ListBox ItemsSource="{Binding Field.FieldMx[0]}" -->
-      <!--          Background="Transparent" Margin="0 20"> -->
-      <!--   <ListBox.ItemTemplate> -->
-      <!--     <DataTemplate x:DataType="models:FieldCellModel"> -->
-      <!--       <WrapPanel> -->
-      <!--         <Button Background="Chocolate" Content="{Binding X}"/> -->
-      <!--       </WrapPanel> -->
-      <!--     </DataTemplate> -->
-      <!--   </ListBox.ItemTemplate> -->
-      <!-- </ListBox> -->
-      <ListBox ItemsSource="{Binding FieldOneLine}" Width="500" Background="Blue">
-        <ListBox.ItemTemplate>
-          <DataTemplate x:DataType="models:FieldCellModel">
-            <Button Grid.Row="{Binding X}" Grid.Column="{Binding Y}" Width="100" Background="Bisque"
-                    Content="{Binding X}">
-            </Button>
-          </DataTemplate>
-        </ListBox.ItemTemplate>
-      </ListBox>
-    </DataTemplate>
-  </UserControl.DataTemplates>
-
-  <viewModels:FieldViewModel></viewModels:FieldViewModel>
+  <!-- <UserControl.DataTemplates> -->
+  <!--   <DataTemplate DataType="{x:Type viewModels:FieldViewModel}"> -->
+  <!-- <ListBox ItemsSource="{Binding Field.FieldMx[0]}" -->
+  <!--          Background="Transparent" Margin="0 20"> -->
+  <!--   <ListBox.ItemTemplate> -->
+  <!--     <DataTemplate x:DataType="models:FieldCellModel"> -->
+  <!-- -->
+  <!--     </DataTemplate> -->
+  <!--   </ListBox.ItemTemplate> -->
+  <!-- </ListBox> -->
+  <DockPanel>
+    <ListBox ItemsSource="{Binding Cells}" Background="PaleVioletRed">
+      <ListBox.ItemsPanel>
+        <!-- <ItemsPanelTemplate x:DataType="models:FieldCellModel"> -->
+        <ItemsPanelTemplate>
+          <WrapPanel/>
+            <!-- <Button Width="100" Background="Bisque" -->
+            <!--         Content="{Binding X}" /> -->
+        </ItemsPanelTemplate>
+      </ListBox.ItemsPanel>
+    </ListBox>
+    <!--   </DataTemplate> -->
+    <!-- </UserControl.DataTemplates> -->
+  </DockPanel>
+  <!-- <viewModels:FieldViewModel></viewModels:FieldViewModel> -->
 </UserControl>
