@@ -1,0 +1,7 @@
+.idea
+.DS_Store
+SeaBattleLastHope/bin/
+SeaBattleLastHope/obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/

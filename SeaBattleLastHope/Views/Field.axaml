@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:SeaBattleLastHope.ViewModels"
+             xmlns:views="clr-namespace:SeaBattleLastHope.Views"
+             xmlns:models="clr-namespace:SeaBattleLastHope.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SeaBattleLastHope.Views.Field"
+             x:DataType="viewModels:FieldViewModel">
+
+
+  <UserControl.DataTemplates>
+    <DataTemplate DataType="{x:Type viewModels:FieldViewModel}">
+      <!-- <ListBox ItemsSource="{Binding Field.FieldMx[0]}" -->
+      <!--          Background="Transparent" Margin="0 20"> -->
+      <!--   <ListBox.ItemTemplate> -->
+      <!--     <DataTemplate x:DataType="models:FieldCellModel"> -->
+      <!--       <WrapPanel> -->
+      <!--         <Button Background="Chocolate" Content="{Binding X}"/> -->
+      <!--       </WrapPanel> -->
+      <!--     </DataTemplate> -->
+      <!--   </ListBox.ItemTemplate> -->
+      <!-- </ListBox> -->
+      <ListBox ItemsSource="{Binding FieldOneLine}" Width="500" Background="Blue">
+        <ListBox.ItemTemplate>
+          <DataTemplate x:DataType="models:FieldCellModel">
+            <Button Grid.Row="{Binding X}" Grid.Column="{Binding Y}" Width="100" Background="Bisque"
+                    Content="{Binding X}">
+            </Button>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+    </DataTemplate>
+  </UserControl.DataTemplates>
+
+  <viewModels:FieldViewModel></viewModels:FieldViewModel>
+</UserControl>
